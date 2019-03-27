@@ -1,52 +1,40 @@
-// array with characters to choose from
-var mortKomChar = ["Morpheus", "Trinity", "Agent Smith"];
+window.onload = function () {
 
-// this creates a var and picks a random name from mortKomChar array
-var randomChar = mortKomChar[Math.floor(Math.random() * mortKomChar.length)];
+    // Creates an array that lists out all of the options.
+    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var wins = 0;
+    var losses = 0;
+    var attempts = 10;
+    var currAttempts = "";
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function (event) {
 
-//   document.body.innerHTML = randomChar;
-// creates an array for the char chosen and replaces with dashes
-var pickdChar = [];
-// // Loop through the array we just set up.
-for (var i = 0; i < randomChar.length; i++) {
-} pickdChar[i] = "-"
+        // Determines which key was pressed.
+        var userGuess = event.key;
 
-//var holds remaining letters
-var reaminingLetters = randomChar.length;
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-var attempts = 11;
+        // Displays wins, losses, attempts,etc
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("loss").innerHTML = losses;
+        document.getElementById("guessLeft").innerHTML = attempts;
+        document.getElementById("guessSoFar").innerHTML = currAttempts;
+        
 
-for (var i = 11; i < attempts.length; i--){
-    
+        // Alerts the Computer's guess.
+        alert("Computer guess: " + computerGuess);
+        currAttempts--;
+
+        if (userGuess == computerGuess) {
+            alert("USER WINS");
+            wins++;
+        }
+        else {
+            alert("COMPUTER WINS");
+            losses++;
+        }
+
+
+    };
 }
-if (attempts == 0) {
-    alert("GAME OVER");
-}
-
-
-
-    // document.onkeyup = function (event) {
-    //     var userKeys = event.key;
-
-
-    //     if (userKeys === "h") {
-    //         car.honk();
-    //         writeCarStats();
-    //         document.getElementById("demo").innerHTML = "h";
-    //     } if (userKeys === "d") {
-    //         car.driveToWork();
-    //         writeCarStats();
-    //         document.getElementById("demo").innerHTML = "d";
-    //     } else if (userKeys === "w") {
-    //         car.driveAroundWorld();
-    //         writeCarStats();
-    //     } else if (userKeys === "t") {
-    //         car.getTuneUp();
-    //         writeCarStats();
-    //     }
-
-
-
-        // if (userKeys === "h") {
-        //   console.log(car.reWriteStats())
-        // }
