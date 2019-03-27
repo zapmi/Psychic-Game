@@ -6,35 +6,57 @@ window.onload = function () {
     var losses = 0;
     var attempts = 10;
     var currAttempts = "";
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    var randLett = computerGuess;
     // This function is run whenever the user presses a key.
-    document.onkeyup = function (event) {
+    // document.onkeyup = function (event) {
 
         // Determines which key was pressed.
-        var userGuess = event.key;
-
-        // Randomly chooses a choice from the options array. This is the Computer's guess.
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-        // Displays wins, losses, attempts,etc
-        document.getElementById("wins").innerHTML = wins;
-        document.getElementById("loss").innerHTML = losses;
-        document.getElementById("guessLeft").innerHTML = attempts;
-        document.getElementById("guessSoFar").innerHTML = currAttempts;
+        // var userGuess = event.key;
         
 
-        // Alerts the Computer's guess.
-        alert("Computer guess: " + computerGuess);
-        currAttempts--;
+            
 
-        if (userGuess == computerGuess) {
-            alert("USER WINS");
-            wins++;
-        }
-        else {
-            alert("COMPUTER WINS");
-            losses++;
-        }
+            // Displays wins, losses, attempts,etc
+            document.getElementById("wins").innerHTML = wins;
+            document.getElementById("loss").innerHTML = losses;
+            document.getElementById("guessLeft").innerHTML = attempts;
+            document.getElementById("guessSoFar").innerHTML = currAttempts;
 
 
+            document.addEventListener("keydown", function (e) {
+                var input = String.fromCharCode(e.keyCode);
+
+
+            // // Alerts the Computer's guess.
+            // alert("Computer guess: " + computerGuess);
+            // currAttempts--;
+
+            // if (currAttempts !== "") {
+            //     currAttempts = currAttempts + ", " + input.toLowerCase();
+            // } else {
+            //     currAttempts = input.toLowerCase();
+            // }
+            if (input.toLowerCase() === randLett) {
+                attempts = 10;
+                randLett = computerGuess;
+                currAttempts = "";
+                wins++;
+            }
+
+            else if (attempts === 0) {
+                attempts = 10;
+                randLett = computerGuess;
+                currAttempts = "";
+                losses++;
+            }
+
+            document.getElementById("wins").innerHTML = wins;
+            document.getElementById("loss").innerHTML = losses;
+            document.getElementById("guessLeft").innerHTML = attempts;
+            document.getElementById("guessSoFar").innerHTML = currAttempts;
+
+
+        });
     };
-}
