@@ -6,57 +6,94 @@ window.onload = function () {
     var losses = 0;
     var attempts = 10;
     var currAttempts = "";
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    // var yourGuess = [];
+    // Randomly chooses a letter from the choices array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     var randLett = computerGuess;
     // This function is run whenever the user presses a key.
     // document.onkeyup = function (event) {
 
-        // Determines which key was pressed.
-        // var userGuess = event.key;
-        
+    // Determines which key was pressed.
+    // var userGuess = event.key;
 
-            
 
-            // Displays wins, losses, attempts,etc
+    // Displays wins, losses, attempts,etc
+    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("loss").innerHTML = losses;
+    document.getElementById("guessLeft").innerHTML = attempts;
+    document.getElementById("guessSoFar").innerHTML = currAttempts;
+
+
+    // document.addEventListener("keydown", function (event) {
+    //     var input = array.computerChoices(event.keyCode);
+
+    // checkLetter();
+
+    // function checkLetter() {
+
+    // document.getElementById("inputBox").addEventListener("keydown", myFunction);
+
+    // function myFunction() {
+    //     // document.getElementById("inputBox").style.backgroundColor = "red";
+    //     // var userChoice = String.fromCharCode(event.keyCode).toLowerCase();
+
+    //     if (yourGuess === randLett) {
+    //         attempts = 10;
+    //         // randLett = computerGuess;
+    //         currAttempts = "";
+    //         wins++;
+    //     }
+
+    //     else {
+
+    document.onkeypress = function (event) {
+        var yourGuess = event.key;
+
+        if (yourGuess === randLett) {
+            wins++;
+        } else {
+            attempts--;
+            guessLeft--;
+        }
+
+        if (attempts === 0) {
+            losses++
+
+
+
+
             document.getElementById("wins").innerHTML = wins;
             document.getElementById("loss").innerHTML = losses;
             document.getElementById("guessLeft").innerHTML = attempts;
             document.getElementById("guessSoFar").innerHTML = currAttempts;
+            // document.getElementById('wins').innerHTML = "Wins: " + wins;
+            // document.getElementById('losses').innerHTML = "losses: " + losses;
+            // document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
+        }
+
+    }
 
 
-            document.addEventListener("keydown", function (e) {
-                var input = String.fromCharCode(e.keyCode);
 
 
-            // // Alerts the Computer's guess.
-            // alert("Computer guess: " + computerGuess);
-            // currAttempts--;
+    // attempts = attempts - 1;
 
-            // if (currAttempts !== "") {
-            //     currAttempts = currAttempts + ", " + input.toLowerCase();
-            // } else {
-            //     currAttempts = input.toLowerCase();
-            // }
-            if (input.toLowerCase() === randLett) {
-                attempts = 10;
-                randLett = computerGuess;
-                currAttempts = "";
-                wins++;
-            }
+    // document.getElementById("attempts").innerHTML = attempts;
+    // yourGuess.push(userChoice); //append user's choice to array yourGuess
 
-            else if (attempts === 0) {
-                attempts = 10;
-                randLett = computerGuess;
-                currAttempts = "";
-                losses++;
-            }
+    // console.log("Your guesses so far: " + yourGuess); //test
 
-            document.getElementById("wins").innerHTML = wins;
-            document.getElementById("loss").innerHTML = losses;
-            document.getElementById("guessLeft").innerHTML = attempts;
-            document.getElementById("guessSoFar").innerHTML = currAttempts;
+    // document.getElementById("your-guesses").innerHTML = yourGuess;
+
+    // console.log("Guesses Left: " + guessesLeft); //test
+
+    // noGuessesLeft();
+
+};
 
 
-        });
-    };
+
+
+
+
