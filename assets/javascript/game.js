@@ -5,7 +5,7 @@ window.onload = function () {
     var wins = 0;
     var losses = 0;
     var attempts = 10;
-    var currAttempts = "";
+    var currAttempts = [];
     
     // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var computerChoices = "Thequickbrownfxjmpsvlazydg";
@@ -71,7 +71,7 @@ window.onload = function () {
 
         if (yourGuess !== computerGuess) {
             attempts--;
-            yourGuess = "";
+            // yourGuess = [];
 
             // }
         }
@@ -104,12 +104,13 @@ window.onload = function () {
             document.getElementById("wins").innerHTML = "" + wins;
             document.getElementById("loss").innerHTML = "" + losses;
             document.getElementById("guessLeft").innerHTML = "" + attempts;
+            document.getElementById("guessSoFar").innerHTML = yourGuess;
 
 
             // document.getElementById("wins").innerHTML = wins;
             // document.getElementById("loss").innerHTML = losses + ;
             // document.getElementById("guessLeft").innerHTML = attempts;
-            // document.getElementById("guessSoFar").innerHTML = currAttempts;
+            
 
 
 
