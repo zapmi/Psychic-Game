@@ -7,8 +7,8 @@ window.onload = function () {
     var attempts = 10;
     // var currAttempts = "";
     // var yourGuess = [];
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    // var computerChoices = "Thequickbrownfxjmpsvlazydg";
+    // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var computerChoices = "Thequickbrownfxjmpsvlazydg";
     // Randomly chooses a letter from the choices array. This is the Computer's guess.
     // var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     // var randLett = computerGuess;
@@ -55,15 +55,20 @@ window.onload = function () {
 
         if (yourGuess === computerGuess) {
             wins++;
-            // attempts = 10;
+            attempts = 10;
             // yourGuess = [];
-            // } else {
-            //     attempts--;
-            //     // guessLeft--;
-            // }
 
-            // if (attempts === 0) {
-            //     losses++
+        }
+
+        if (yourGuess !== computerGuess) {
+            attempts--;
+
+        // }
+
+        // if (attempts == 0) {
+        //     losses++
+        //     attempts = 10;
+
 
             // if (yourGuess !== computerGuess) {
             //     attempts--;
@@ -89,39 +94,40 @@ window.onload = function () {
 
             // }
 
+            document.getElementById("wins").innerHTML = "" + wins;
+            document.getElementById("loss").innerHTML = "" + losses;
+            document.getElementById("guessLeft").innerHTML = "" + attempts;
 
 
-
-            document.getElementById("wins").innerHTML = wins;
-            document.getElementById("loss").innerHTML = losses;
-            document.getElementById("guessLeft").innerHTML = attempts;
+            // document.getElementById("wins").innerHTML = wins;
+            // document.getElementById("loss").innerHTML = losses + ;
+            // document.getElementById("guessLeft").innerHTML = attempts;
             // document.getElementById("guessSoFar").innerHTML = currAttempts;
 
 
-            // document.getElementById('wins').innerHTML = "Wins: " + wins;
-            // document.getElementById('losses').innerHTML = "losses: " + losses;
-            // document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
 
         }
 
+
+
+
+
+
+        // attempts = attempts - 1;
+
+        // document.getElementById("attempts").innerHTML = attempts;
+        // yourGuess.push(userChoice); //append user's choice to array yourGuess
+
+        // console.log("Your guesses so far: " + yourGuess); //test
+
+        // document.getElementById("your-guesses").innerHTML = yourGuess;
+
+        // console.log("Guesses Left: " + guessesLeft); //test
+
+        // noGuessesLeft();
+
     }
-
-
-
-
-    // attempts = attempts - 1;
-
-    // document.getElementById("attempts").innerHTML = attempts;
-    // yourGuess.push(userChoice); //append user's choice to array yourGuess
-
-    // console.log("Your guesses so far: " + yourGuess); //test
-
-    // document.getElementById("your-guesses").innerHTML = yourGuess;
-
-    // console.log("Guesses Left: " + guessesLeft); //test
-
-    // noGuessesLeft();
-
 };
 
 
