@@ -5,8 +5,8 @@ window.onload = function () {
     var wins = 0;
     var losses = 0;
     var attempts = 10;
-    // var currAttempts = "";
-    // var yourGuess = [];
+    var currAttempts = "";
+    
     // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var computerChoices = "Thequickbrownfxjmpsvlazydg";
     // Randomly chooses a letter from the choices array. This is the Computer's guess.
@@ -23,7 +23,7 @@ window.onload = function () {
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("loss").innerHTML = losses;
     document.getElementById("guessLeft").innerHTML = attempts;
-    // document.getElementById("guessSoFar").innerHTML = currAttempts;
+    document.getElementById("guessSoFar").innerHTML = currAttempts;
 
 
     // document.addEventListener("keydown", function (event) {
@@ -52,6 +52,10 @@ window.onload = function () {
 
         // document.onkeyup = function (event) {
         //     var yourGuess = event.key;
+        if(event.which <= 90 && event.which >= 58){
+
+        
+
 
         if (yourGuess === computerGuess) {
             wins++;
@@ -60,14 +64,17 @@ window.onload = function () {
 
         }
 
+        if (attempts == 0) {
+            losses++
+            attempts = 11;
+        }
+
         if (yourGuess !== computerGuess) {
             attempts--;
+            yourGuess = "";
 
-        // }
-
-        // if (attempts == 0) {
-        //     losses++
-        //     attempts = 10;
+            // }
+        }
 
 
             // if (yourGuess !== computerGuess) {
