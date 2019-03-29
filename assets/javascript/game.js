@@ -30,10 +30,11 @@ window.onload = function () {
     //     var input = array.computerChoices(event.keyCode);
 
     // checkLetter();
-    document.onkeyup = function (event) {
+    document.onkeydown = function (event) {
         // document.getElementById("inputBox").onkeyup = function checkLetter(event) {
         var yourGuess = event.key;
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        document.getElementById("inputBox").style.backgroundColor = "red";
         // document.getElementById("inputBox").addEventListener("keydown", myFunction);
 
         // function myFunction() {
@@ -60,13 +61,14 @@ window.onload = function () {
         if (yourGuess === computerGuess) {
             wins++;
             attempts = 10;
-            // yourGuess = [];
+            currAttempts = [];
 
         }
 
         if (attempts == 0) {
             losses++
             attempts = 11;
+            currAttempts = [];
         }
 
         if (yourGuess !== computerGuess) {
@@ -106,7 +108,7 @@ window.onload = function () {
             document.getElementById("guessLeft").innerHTML = "" + attempts;
 
             currAttempts.push(yourGuess);
-            document.getElementById("guessSoFar").innerHTML = "" + currAttempts;
+            document.getElementById("guessSoFar").innerHTML = " " + currAttempts;
 
 
             // document.getElementById("wins").innerHTML = wins;
