@@ -1,6 +1,7 @@
 body {
-    background-image: url("../images/mortK.png");
+    background-image: url("../images/mortK.jpeg");
     background-size: 100%;
+    background-position: 0 0;
 }
 
 h1, h2, p {

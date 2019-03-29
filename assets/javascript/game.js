@@ -65,7 +65,7 @@ window.onload = function () {
 
         }
 
-        if (attempts == 0) {
+        else if (attempts == 0) {
             losses++
             attempts = 11;
             currAttempts = [];
@@ -77,6 +77,13 @@ window.onload = function () {
 
             // }
         }
+        if (wins == 10 && losses < wins){
+            alert("YOU WIN!!");
+        }
+        else if (losses == 10){
+            alert("GAME OVER!!");
+        }
+
 
 
             // if (yourGuess !== computerGuess) {
