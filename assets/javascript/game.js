@@ -104,7 +104,9 @@ window.onload = function () {
             document.getElementById("wins").innerHTML = "" + wins;
             document.getElementById("loss").innerHTML = "" + losses;
             document.getElementById("guessLeft").innerHTML = "" + attempts;
-            document.getElementById("guessSoFar").innerHTML = yourGuess;
+
+            currAttempts.push(yourGuess);
+            document.getElementById("guessSoFar").innerHTML = "" + currAttempts;
 
 
             // document.getElementById("wins").innerHTML = wins;
