@@ -6,7 +6,7 @@ window.onload = function () {
     var losses = 0;
     var attempts = 10;
     var currAttempts = [];
-    
+
     // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var computerChoices = "Thequickbrownfxjmpsvlazydg";
     // Randomly chooses a letter from the choices array. This is the Computer's guess.
@@ -29,64 +29,67 @@ window.onload = function () {
     // document.addEventListener("keydown", function (event) {
     //     var input = array.computerChoices(event.keyCode);
 
+
     // checkLetter();
     document.onkeydown = function (event) {
         // document.getElementById("inputBox").onkeyup = function checkLetter(event) {
         var yourGuess = event.key;
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        document.getElementById("inputBox").style.backgroundColor = "red";
-        // document.getElementById("inputBox").addEventListener("keydown", myFunction);
+        if (event.which <= 90 && event.which >= 58) {
+            document.getElementById("inputBox").style.backgroundColor = "red";
 
-        // function myFunction() {
-        //     // document.getElementById("inputBox").style.backgroundColor = "red";
-        //     // var userChoice = String.fromCharCode(event.keyCode).toLowerCase();
+            // document.getElementById("inputBox").addEventListener("keydown", myFunction);
 
-        //     if (yourGuess === randLett) {
-        //         attempts = 10;
-        //         // randLett = computerGuess;
-        //         currAttempts = "";
-        //         wins++;
-        //     }
+            // function myFunction() {
+            //     // document.getElementById("inputBox").style.backgroundColor = "red";
+            //     // var userChoice = String.fromCharCode(event.keyCode).toLowerCase();
 
-        //     else {
+            //     if (yourGuess === randLett) {
+            //         attempts = 10;
+            //         // randLett = computerGuess;
+            //         currAttempts = "";
+            //         wins++;
+            //     }
 
-
-        // document.onkeyup = function (event) {
-        //     var yourGuess = event.key;
-        if(event.which <= 90 && event.which >= 58){
-
-        
+            //     else {
 
 
-        if (yourGuess === computerGuess) {
-            wins++;
-            attempts = 10;
-            currAttempts = [];
+            // document.onkeyup = function (event) {
+            //     var yourGuess = event.key;
 
-        }
 
-        else if (attempts == 0) {
-            losses++
-            attempts = 11;
-            currAttempts = [];
-        }
 
-        if (yourGuess !== computerGuess) {
-            attempts--;
-            // yourGuess = [];
 
+
+            if (yourGuess === computerGuess) {
+                wins++;
+                attempts = 10;
+                currAttempts = [];
+
+            }
+
+            else if (attempts == 0) {
+                losses++
+                attempts = 11;
+                currAttempts = [];
+            }
+
+            if (yourGuess !== computerGuess) {
+                attempts--;
+                // yourGuess = [];
+
+                // }
+            }
+
+            // if (yourGuess == currAttemptsx) {
+            //     alert("YOU ALREADY GUESSED THAT");
             // }
-        }
-
-        // if (yourGuess == currAttemptsx) {
-        //     alert("YOU ALREADY GUESSED THAT");
-        // }
-        if (wins == 10 && losses < wins){
-            alert("YOU WIN!!");
-        }
-        else if (losses == 10){
-            alert("GAME OVER!!");
-        }
+            if (wins == 10 && losses < wins) {
+                alert("YOU WIN!!");
+            }
+            else if (losses == 10) {
+                alert("GAME OVER!!");
+            }
 
 
 
@@ -125,7 +128,7 @@ window.onload = function () {
             // document.getElementById("wins").innerHTML = wins;
             // document.getElementById("loss").innerHTML = losses + ;
             // document.getElementById("guessLeft").innerHTML = attempts;
-            
+
 
 
 
