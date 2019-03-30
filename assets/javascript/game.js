@@ -77,6 +77,10 @@ window.onload = function () {
 
             // }
         }
+
+        // if (yourGuess == currAttemptsx) {
+        //     alert("YOU ALREADY GUESSED THAT");
+        // }
         if (wins == 10 && losses < wins){
             alert("YOU WIN!!");
         }
