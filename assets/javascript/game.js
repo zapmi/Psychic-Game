@@ -61,29 +61,7 @@ window.onload = function () {
             document.getElementById("guessSoFar").innerHTML = " " + currAttempts;
 
 
-
-
-
         }
-
-
-
-
-
-
-        // attempts = attempts - 1;
-
-        // document.getElementById("attempts").innerHTML = attempts;
-        // yourGuess.push(userChoice); //append user's choice to array yourGuess
-
-        // console.log("Your guesses so far: " + yourGuess); //test
-
-        // document.getElementById("your-guesses").innerHTML = yourGuess;
-
-        // console.log("Guesses Left: " + guessesLeft); //test
-
-        // noGuessesLeft();
-
     }
 };
 
