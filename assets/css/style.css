@@ -1,8 +1,7 @@
 @font-face {
     font-family: "mortalKombatFont";
     src: url("../fonts/mortalkombat1.ttf") format("woff"), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url("../fonts/mortalkombat1.ttf") format('truetype');
-    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    url("../fonts/mortalkombat1.ttf") format('truetype');  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 body {
@@ -12,7 +11,7 @@ body {
     font-family: mortalKombatFont;
 }
 
-h1, h2, p {
+h1, h2, p3 {
     color: white;
 }
 
@@ -24,4 +23,12 @@ p1, p2 {
 
 p2 {
     color: red;
+}
+
+#inputBox {
+    margin: 20px 20px 20px 0px;
+}
+
+p3 {
+    font-size: 150%;
 }
