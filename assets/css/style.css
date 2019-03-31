@@ -10,7 +10,9 @@ body {
     background-position: 0 0;
     font-family: mortalKombatFont;
 }
-
+h1 {
+    font-size: 100px;
+}
 h1, h2, p3 {
     color: white;
 }

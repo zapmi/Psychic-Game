@@ -64,10 +64,3 @@ window.onload = function () {
         }
     }
 };
-
-
-
-
-
-
-
